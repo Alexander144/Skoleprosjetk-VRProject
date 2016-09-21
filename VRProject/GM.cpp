@@ -30,12 +30,12 @@ void AGM::Tick(float DeltaTime)
 	if ((ShootingInterval*DeltaTime) <= 0) {
 
 		//Setter hvem som eier objektet som spawner
-		FActorSpawnParameters spawn;
-		spawn.Owner = this;
-		spawn.Instigator = Instigator;
-		AEnemy* NewSpawnObject = GetWorld()->SpawnActor<AEnemy>(Ball, locBall, rotBall, spawn);
+		//FActorSpawnParameters spawn;
+		//spawn.Owner = this;
+		//spawn.Instigator = Instigator;
+		//AEnemy* NewSpawnObject = GetWorld()->SpawnActor<AEnemy>(Ball, locBall, rotBall, spawn);
 
-		ShootingInterval = 1000;
+		//ShootingInterval = 1000;
 	}
-	ShootingInterval = ShootingInterval - 1;
+	//ShootingInterval = ShootingInterval - 1;
 }
