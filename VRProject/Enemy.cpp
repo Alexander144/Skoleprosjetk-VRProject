@@ -20,13 +20,13 @@ AEnemy::AEnemy(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitial
 	MyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MyMesh"));
 	MyMesh->AttachTo(RootComponent);
 	rotBall.ZeroRotator;
-	locBall = FVector(this->GetActorLocation().X + 500 + FMath::FRandRange(0, 1000), this->GetActorLocation().Y + 200 + FMath::FRandRange(0, 1000), this->GetActorLocation().Z + 700) + FMath::FRandRange(0, 1000);
 }
 
 // Called when the game starts or when spawned
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
+	locBall = FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z);
 
 }
 
