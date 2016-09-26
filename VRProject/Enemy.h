@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "BaseP.h"
 #include "BallShoot.h"
 #include "Enemy.generated.h"
 
@@ -19,7 +20,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) UShapeComponent* CSphere;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) UStaticMeshComponent* MyMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<ABallShoot> Ball; //Send in blueprint
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector BlueBase;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator rotBall;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float angle;
 
 	UFUNCTION()
 		void OnHit(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
