@@ -27,8 +27,10 @@ void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	locBall = FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z);
-	angle = FMath::Acos(FVector::DotProduct(this->GetActorLocation(), BlueBase));
-	rotBall.Add(90,10,20);
+	FVector Direction = GetActorLocation() - BlueBaseLoc;
+	Direction.Normalize();
+	
+	SetActorRotation(Direction.Rotation());
 	
 }
 
@@ -37,7 +39,7 @@ void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	if ((ShootingInterval*DeltaTime) <= 0) {
-		
+	
 		//Setter hvem som eier objektet som spawner
 		FActorSpawnParameters spawn;
 		spawn.Owner = this;
@@ -45,7 +47,6 @@ void AEnemy::Tick(float DeltaTime)
 		ABallShoot* NewSpawnObject = GetWorld()->SpawnActor<ABallShoot>(Ball, locBall, rotBall, spawn);
 		NewSpawnObject->SetSpeed(ShootingSpeed);
 
-		//NewSpawnObject->SetActorRotation(n);
 
 		ShootingInterval = 1000;
 	}

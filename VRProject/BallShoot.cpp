@@ -29,14 +29,7 @@ ABallShoot::ABallShoot(const FObjectInitializer& ObjectInitializer) :Super(Objec
 void ABallShoot::BeginPlay()
 {
 	Super::BeginPlay();
-	for (TObjectIterator<ABaseP> Itr; Itr; ++Itr)
-	{
-		// Filter out objects not contained in the target world.
-		if (Itr->GetWorld()->GetName() == "egg")
-		{
-			Base = Itr->GetActorLocation();
-		}
-	}
+
 	Player = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
 	Direction = Base - GetActorLocation();
 
