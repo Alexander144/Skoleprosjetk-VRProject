@@ -22,6 +22,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<ABallShoot> Ball; //Send in blueprint
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector BlueBaseLoc;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator BlueBaseRot;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<class ADestructibleActor> destructible;
 
 	UFUNCTION()
 		void OnHit(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);

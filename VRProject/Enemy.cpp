@@ -14,7 +14,7 @@ AEnemy::AEnemy(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitial
 	SetActorEnableCollision(true);
 	CSphere = ObjectInitializer.CreateDefaultSubobject<USphereComponent>(this, TEXT("Root"));
 	//CSphere->OnComponentHit.AddDynamic(this, &AEnemy::OnHit);
-	CSphere->SetSimulatePhysics(true);
+	CSphere->SetSimulatePhysics(false);
 	CSphere->SetEnableGravity(false);
 	RootComponent = CSphere;
 
@@ -27,7 +27,7 @@ AEnemy::AEnemy(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitial
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
-	locBall = FVector(GetActorLocation().X + 200, GetActorLocation().Y+600, GetActorLocation().Z);
+	locBall = FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z);
 	FVector Direction = GetActorLocation() - BlueBaseLoc;
 	Direction.Normalize();
 	
