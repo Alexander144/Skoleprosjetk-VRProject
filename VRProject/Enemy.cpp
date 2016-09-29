@@ -51,9 +51,6 @@ void AEnemy::Tick(float DeltaTime)
 
 		ShootingInterval = 1000;
 	}
-	if (Health <= 0) {
-		Destroy();
-	}
 	ShootingInterval = ShootingInterval - 1;
 }
 void AEnemy::OnHit(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
