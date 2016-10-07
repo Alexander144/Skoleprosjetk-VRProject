@@ -31,8 +31,7 @@ void ABallShoot::BeginPlay()
 	Super::BeginPlay();
 
 	Player = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-	Direction = Base - GetActorLocation();
-
+	Direction = Player - GetActorLocation();
 }
 
 // Called every frame

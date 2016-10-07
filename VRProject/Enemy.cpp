@@ -18,8 +18,6 @@ AEnemy::AEnemy(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitial
 	CSphere->SetEnableGravity(false);
 	RootComponent = CSphere;
 
-	MyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MyMesh"));
-	MyMesh->AttachTo(RootComponent);
 	rotBall.ZeroRotator;
 }
 
