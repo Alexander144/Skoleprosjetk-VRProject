@@ -18,6 +18,7 @@ AEnemy::AEnemy(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitial
 	CSphere->SetEnableGravity(false);
 	RootComponent = CSphere;
 
+	DoShoot = true;
 	rotBall.ZeroRotator;
 }
 
@@ -37,7 +38,7 @@ void AEnemy::BeginPlay()
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if ((ShootingInterval*DeltaTime) <= 0) {
+	if ((ShootingInterval*DeltaTime) <= 0 && DoShoot == true) {
 	
 		//Setter hvem som eier objektet som spawner
 		FActorSpawnParameters spawn;
@@ -49,7 +50,9 @@ void AEnemy::Tick(float DeltaTime)
 
 		ShootingInterval = 1000;
 	}
-	ShootingInterval = ShootingInterval - 1;
+	if (DoShoot == true) {
+		ShootingInterval = ShootingInterval - 1;
+	}
 }
 void AEnemy::OnHit(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
