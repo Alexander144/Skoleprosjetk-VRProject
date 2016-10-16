@@ -12,11 +12,11 @@ AEnemy::AEnemy(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitial
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	SetActorEnableCollision(true);
-	CSphere = ObjectInitializer.CreateDefaultSubobject<USphereComponent>(this, TEXT("Root"));
+	//CSphere = ObjectInitializer.CreateDefaultSubobject<USphereComponent>(this, TEXT("Root"));
 	//CSphere->OnComponentHit.AddDynamic(this, &AEnemy::OnHit);
-	CSphere->SetSimulatePhysics(false);
-	CSphere->SetEnableGravity(false);
-	RootComponent = CSphere;
+	//CSphere->SetSimulatePhysics(false);
+	//CSphere->SetEnableGravity(false);
+	//RootComponent = CSphere;
 
 	DoShoot = true;
 	rotBall.ZeroRotator;
