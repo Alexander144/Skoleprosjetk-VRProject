@@ -19,8 +19,8 @@ public:
 
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite) UShapeComponent* CSphere;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<ABallShoot> Ball; //Send in blueprint
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector BlueBaseLoc;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator BlueBaseRot;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector BlueBaseLoc;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator BlueBaseRot;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool DoShoot;
 
 	UFUNCTION()
@@ -31,7 +31,7 @@ public:
 	AEnemy(const FObjectInitializer& ObjectInitializer);
 
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	//virtual void BeginPlay() override;
 
 	// Called every frame
 	virtual void Tick(float DeltaSeconds) override;
