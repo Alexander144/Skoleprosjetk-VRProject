@@ -19,20 +19,20 @@ AEnemy::AEnemy(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitial
 	//RootComponent = CSphere;
 
 	DoShoot = true;
-	//rotBall.ZeroRotator;
+	rotBall.ZeroRotator;
 }
 
 // Called when the game starts or when spawned
-/*void AEnemy::BeginPlay()
+void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	locBall = FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z);
-	FVector Direction = GetActorLocation() - BlueBaseLoc;
-	Direction.Normalize();
+//	FVector Direction = GetActorLocation() - BlueBaseLoc;
+	//Direction.Normalize();
 	
-	SetActorRotation(Direction.Rotation());
+	//SetActorRotation(Direction.Rotation());
 	
-}*/
+}
 
 // Called every frame
 void AEnemy::Tick(float DeltaTime)
@@ -45,8 +45,6 @@ void AEnemy::Tick(float DeltaTime)
 		spawn.Owner = this;
 		spawn.Instigator = Instigator;
 		ABallShoot* NewSpawnObject = GetWorld()->SpawnActor<ABallShoot>(Ball, locBall, rotBall, spawn);
-		NewSpawnObject->SetSpeed(ShootingSpeed);
-
 
 		ShootingInterval = 1000;
 	}
