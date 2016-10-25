@@ -16,7 +16,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Health;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ShootingSpeed;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ShootingInterval;
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 oldInterval;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Spawned;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) ABallShoot *Laser;
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite) UShapeComponent* CSphere;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) TSubclassOf<ABallShoot> Ball; //Send in blueprint
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector BlueBaseLoc;

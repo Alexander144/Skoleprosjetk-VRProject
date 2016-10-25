@@ -27,6 +27,7 @@ void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 	locBall = FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z);
+	oldInterval = ShootingInterval;
 //	FVector Direction = GetActorLocation() - BlueBaseLoc;
 	//Direction.Normalize();
 	
@@ -38,15 +39,16 @@ void AEnemy::BeginPlay()
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if ((ShootingInterval*DeltaTime) <= 0 && DoShoot == true) {
+	if ((ShootingInterval) <= 0 && DoShoot == true) {
 	
 		//Setter hvem som eier objektet som spawner
 		FActorSpawnParameters spawn;
 		spawn.Owner = this;
 		spawn.Instigator = Instigator;
 		ABallShoot* NewSpawnObject = GetWorld()->SpawnActor<ABallShoot>(Ball, locBall, rotBall, spawn);
-
-		ShootingInterval = 1000;
+		Spawned = true;
+		Laser = NewSpawnObject;
+		ShootingInterval = oldInterval;
 	}
 	if (DoShoot == true) {
 		ShootingInterval = ShootingInterval - 1;
