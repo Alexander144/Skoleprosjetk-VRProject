@@ -14,7 +14,6 @@ class VRPROJECT_API AEnemy : public AActor
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Health;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ShootingSpeed;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ShootingInterval;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 oldInterval;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool Spawned;
