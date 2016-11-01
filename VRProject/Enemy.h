@@ -13,7 +13,7 @@ class VRPROJECT_API AEnemy : public AActor
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 Health;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float Health;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ShootingSpeed;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 ShootingInterval;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) int32 oldInterval;
