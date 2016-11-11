@@ -26,7 +26,6 @@ AEnemy::AEnemy(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitial
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
-	locBall = FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z);
 	oldInterval = ShootingInterval;
 //	FVector Direction = GetActorLocation() - BlueBaseLoc;
 	//Direction.Normalize();
@@ -38,6 +37,7 @@ void AEnemy::BeginPlay()
 // Called every frame
 void AEnemy::Tick(float DeltaTime)
 {
+	locBall = FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z);
 	Super::Tick(DeltaTime);
 	if ((ShootingInterval) <= 0 && DoShoot == true) {
 	
