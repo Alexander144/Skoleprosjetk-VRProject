@@ -26,6 +26,7 @@ public:
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector BlueBaseLoc;
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite) FRotator BlueBaseRot;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool DoShoot;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector locBall;
 
 	UFUNCTION()
 		void OnHit(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
@@ -41,7 +42,6 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 private:
-	FVector locBall;
 	FRotator rotBall;
 
 };
